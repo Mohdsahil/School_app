@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg1 {
+  background-color: #4d36de;
+}
+.bg2 {
+  background-color: #ade4ef;
+}
+.bg3 {
+  background-color: #007bff;
+}
+
+footer {
+  padding: 3rem 1.5rem;
+}
+
+.col1 {
+  color: #4d36de;
+}
+.col2 {
+  color: #ade4ef;
+}
+.col3 {
+  color: #007bff;
+}
+
+video::-internal-media-controls-download-button {
+  display: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px); /* Adjust as needed */
+}
