@@ -13,6 +13,7 @@ import { Player, ControlBar } from "video-react";
 
 const SLecture = ({ match }) => {
   const [lectures, setLectures] = useState([]);
+  const [lectureId, setLectureId] = useState();
   const [videourl, setVideourl] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -29,16 +30,15 @@ const SLecture = ({ match }) => {
         } else {
           setLoading(false);
           setLectures(data);
+          setLectureId(data[0]._id);
+
         }
       }
     );
   };
 
-  const loadVideo = (lectureId) => {
-    getVideo(lectureId).then((data) => {
-      if (data.error) console.log(data.error);
-      else setVideourl(data);
-    });
+  const loadVideo = (id) => {
+    setLectureId(id);
   };
 
   useEffect(() => {
@@ -104,8 +104,7 @@ const SLecture = ({ match }) => {
           <div className="col-md-8">
             <h2>vide play section</h2>
             <video
-              src={videourl}
-              autoPlay
+              src={getVideo(lectureId)}
               controls
               controlsList="nodownload"
             ></video>

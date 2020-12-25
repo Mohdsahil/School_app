@@ -62,7 +62,7 @@ const CreateStudent = () => {
       error: false,
       success: false,
     });
-    formData.set("password", phone + name);
+    formData.set("password", email);
 
     createStudent(formData, user._id, token).then((data) => {
       if (data.error) {

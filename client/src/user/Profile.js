@@ -14,7 +14,7 @@ const Profile = () => {
           <div className="col-md-8">
             {user.role == "1" && <h2>Teacher's Profile</h2>}
             {user.role == "0" && <h2>Students's Profile</h2>}
-            <img src={getPhoto(user._id)} alt="" />
+            <img src={getPhoto(user._id)} alt="" className="img-fluid" />
           </div>
           <div className="col-md-4">
             <h4>Name: {user.name}</h4>

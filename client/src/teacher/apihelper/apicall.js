@@ -73,13 +73,17 @@ export const getPdf = (lectureId) => {
 };
 
 export const getVideo = (lectureId) => {
+  return `${API}/lecture/video/${lectureId}`;
+
   return fetch(`${API}/lecture/video/${lectureId}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json",
+      "Content-Type": "video/mp4",
     },
-  })
+  }
+
+  )
     .then((response) => response.json())
     .catch((err) => console.log(err));
 };
